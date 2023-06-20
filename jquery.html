@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>TO DO LIST</title>
+</head>
+
+<style>
+
+*
+{
+    font-family: Arial, Helvetica, sans-serif;
+}   
+
+body
+{
+    background-color: black;
+}
+
+div
+{
+    width: 400px;
+    height: 500px;
+    background-color: rgb(50, 50, 50);
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 40px 5px rgb(171, 65, 26);
+    
+}
+ 
+
+input
+{
+    padding: 10px 40px;
+    margin: 20px 70px;
+    border-radius: 5px;
+    outline: none;
+    background-color: black;
+    border:1px solid orangered;
+    box-shadow: 2px 2px 20px orangered;
+    box-shadow:inset 1px 1px 15px orangered;
+    color: white;
+}
+
+ul
+{
+        margin: 40px 70px;
+        border-radius: 20px;
+        color: black;
+        padding: 10px 20px;
+      
+}
+
+
+li
+{
+    list-style: none;
+       background-color:orangered;
+       padding: 10px 15px;
+       border-radius: 15px;
+       color: white;
+       position: relative;
+       box-shadow: 2px 2px 20px orangered;
+       box-shadow: 2px 2px 20px orangered;
+}
+
+h1
+{
+    color: orangered;
+    text-align: center;
+    padding-top: 40px;
+    text-shadow: 2px 2px 20px orangered;
+}
+
+::placeholder
+{
+    text-transform: capitalize;
+    color: orangered;
+}
+
+
+.fa-check
+{
+    position: absolute;
+    left: 160px;
+}
+
+.fa-trash
+{
+    position: absolute;
+    left: 190px;
+}
+
+.text
+{
+    text-decoration: line-through;
+    color: white;
+}
+
+.display
+{
+    display: none;
+}
+
+</style>
+
+
+
+
+
+
+<body>
+
+<div>
+    
+<h1>To Do List</h1>
+<input type="text" placeholder="enter you add list">
+<ul></ul>
+
+
+
+</div>
+
+
+    
+</body>
+
+<script>
+
+$(document).ready(function()
+{
+
+ $("input").change(function()
+ {   
+
+var a=$("input").val();
+$("ul").append('<li>' + a + '<i class="fa-solid fa-check"></i><i class="fa-solid fa-trash"></i></li>'+'<br>');
+$("input").val("");
+
+});
+
+
+$("ul").on("click",".fa-check",function()
+{
+    $(this).parent("li").addClass("text");
+})
+$("ul").on("click",".fa-trash",function()
+{
+    $(this).parent("li").fadeOut(300);
+})
+
+
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+</html>
